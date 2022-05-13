@@ -17,8 +17,11 @@ public class Program {
         // Draw a short red diagonal on the canvas
         canvas.pause();
         canvas.setColor(Color.red);
-        for (int i = 0; i < 100; i++) {
-            canvas.plot(i, i);
+        GetY Y = (x) ->
+        { return (int) (200 * Math.sin(Math.PI * x/180));
+        };
+        for (int i = -180; i < 180; i++) {
+            canvas.plot(i, Y.calcY(i));
         }
 
         // Pause and close the canvas then terminate the program.
