@@ -20,12 +20,16 @@ public class Program {
         GetY Y = (x) ->
         { return (int) (200 * Math.sin(Math.PI * x/180));
         };
-        for (int i = -180; i < 180; i++) {
-            canvas.plot(i, Y.calcY(i));
-        }
+        plotFunction(Y);	
 
         // Pause and close the canvas then terminate the program.
         canvas.pause();
         canvas.close();
+    }
+    
+    public static void plotFunction(GetY function) {
+    	 for (int i = -360; i < 360; i++) {
+             canvas.plot(i, function.calcY(i));
+         }
     }
 }
